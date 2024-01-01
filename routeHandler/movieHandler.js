@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.post("/", checkLogin, async(req, res) => {
     if(req.isAdmin) {
+        console.log(req.body);
         const newMovie = new Movie(req.body);
         try {
             const movie = await newMovie.save();
